@@ -1,0 +1,36 @@
+<app-admin-header></app-admin-header>
+<div class="container col-md-6 bg">
+  <div class="panel">
+    <h1 style="color:black; text-align: center;">Add Products</h1>
+    <form (ngSubmit)="addProducts()">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Product Id</label>
+        <input type="text" class="form-control" id="productId"  name="productId" [(ngModel)]="product.productId">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name"  name="name" [(ngModel)]="product.name">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description"  name="description" [(ngModel)]="product.description" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Price</label>
+        <input type="text" class="form-control" id="price"  name="price" [(ngModel)]="product.price">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">ImageUrl</label>
+        <input type="text" class="form-control" id="imageUrl"  name="imageUrl" [(ngModel)]="product.imageUrl">
+      </div>
+      <!-- <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Category Id</label>
+        <input type="text" class="form-control" id="categoryId"  name="categoryId" [(ngModel)]="product.categoryId">
+      </div> -->
+      <div style="display: flex; justify-content: center;">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+

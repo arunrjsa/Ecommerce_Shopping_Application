@@ -1,0 +1,39 @@
+<div class="bg">
+  <div class="panel">
+    <div class="container col-md-11 my-auto">
+      <h2 style="text-align: center" class="mb-2">Register User</h2>
+      <form (ngSubmit)="userRegister()" ngNativeValidate>
+        <div class="mb-2">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="text" class="form-control" pattern="[789][0-9]{9}" id="phone" name="phone" [(ngModel)]="user.phone">
+        </div>
+        <div class="mb-2">
+          <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name"  name="name" [(ngModel)]="user.name" required>
+        </div>
+        <div class="mb-2">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email"  name="email" [(ngModel)]="user.userId" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password"  name="password" [(ngModel)]="user.password"
+              minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+        </div>
+        <!-- <div class="mb-2">
+          <label for="password" class="form-label">Confrim Password</label>
+          <input type="password" class="form-control" id="cpassword"  name="cpassword" [(ngModel)]="user.cpassword"
+            minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+        </div> -->
+        <div class="mb-2" style="display: flex; justify-content: center;">
+          <button style="width: 100px;" type="submit" class="btn btn-primary">Register</button>
+        </div>
+        <div class="text-center mb-2">
+          <a routerLink="/login">Already have an account?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    

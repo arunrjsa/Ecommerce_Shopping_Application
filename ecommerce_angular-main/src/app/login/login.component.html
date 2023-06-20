@@ -1,0 +1,25 @@
+<div class="img">
+  <div class="panel">
+    <div style="padding-top: 5%;" class="container col-md-10 my-auto">
+      <form (ngSubmit)="userLogin()" ngNativeValidate>
+        <h2 style="text-align: center">User Login</h2>
+        <div class="form-outline mb-4">
+          <label class="form-label">Email address</label>
+          <input type="email" [(ngModel)]="user.userId" class="form-control" id="userId" name="userId" required />
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label">Password</label>
+          <input type="password" [(ngModel)]="user.password" class="form-control" id="password" name="password"
+            minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required />
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <button type="submit" class="btn btn-primary btn-block mb-4" style="width: 100px;">Login</button>
+        </div>
+        <div class="text-center">
+          <a routerLink="/register">Not a member? Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

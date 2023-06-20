@@ -1,0 +1,30 @@
+.cart-page-product-image {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.price-quantity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.checkout-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.head-quantity {
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+}

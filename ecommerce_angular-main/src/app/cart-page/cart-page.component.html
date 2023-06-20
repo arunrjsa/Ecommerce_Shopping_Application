@@ -1,0 +1,56 @@
+<app-header></app-header>
+<h1 style="text-align: center; margin-bottom: 5%">Shopping Cart</h1>
+<div class="container" style="height: 50px;">
+  <mat-grid-list cols="4" rowHeight="3:1" gutterSize="1">
+    <mat-grid-tile>
+      <b><p>Image</p></b>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <b><p>Name</p></b>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="head-quantity">
+        <b><p>Price</p></b>
+        <b><p>Quantity</p></b>
+        <b><p>SubTotal</p></b>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <b><p>Remove</p></b>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<hr style="width: 1140px; margin: auto; margin-top: 20px; height: 2px; size: 10px;">
+<div class="container mt-3" *ngFor="let c of cartDetails">
+  <mat-grid-list cols="4" rowHeight="3:1" gutterSize="1">
+    <mat-grid-tile>
+        <img class="cart-page-product-image" src="{{c.imageUrl}}" alt="">
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="column">
+        <p style="margin-bottom: 0px;"><b>{{c.name}}</b></p>
+        <p style="white-space: inherit; text-overflow: ellipsis; height: 50px; width: 275px; overflow: hidden;">{{c.description}}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="price-quantity">
+        <p style="margin-bottom: 0px;">{{c.price}}</p>
+        <input type="text" id="quantity" name="quantity" style="width: 20%; text-align: center;" #textInput [value]="c.quantity" (input)="+textInput.value >= 1 && updateQuantity(textInput.value, c)">
+        <p style="margin-bottom: 0px;">{{c.subTotal}}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div>
+        <button mat-raised-button (click)="deleteCartItem(c)" style="background-color: #3f51b5;">Delete</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<hr style="width: 1140px; margin: auto; margin-top: 20px; height: 2px; size: 10px;">
+<div class="container checkout-section">
+  <div class="row">
+    <p>Total Price Rs. {{totalPrice}}</p>
+    <button mat-raised-button (click)="emptyCart()" style="background-color: #f44336; margin-bottom: 20px;">Empty Cart</button>
+    <button routerLink="/payment" mat-raised-button style="background-color: green;">Checkout</button>
+  </div>
+</div>

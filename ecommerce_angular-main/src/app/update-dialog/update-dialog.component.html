@@ -1,0 +1,32 @@
+<app-admin-header></app-admin-header>
+<div class="panel">
+    <h1>Edit Product</h1>
+    <hr>
+    <form (ngSubmit)="updatePro()">
+        <div class="form-group">
+            <label for="participants" class="form-group-label">Product Id</label>
+            <div class="form-group-input-container">
+                <input type="text" id="productId" name="productId" class="form-control" [(ngModel)]="product.productId">
+            </div>
+            <label for="participants" class="form-group-label">Name</label>
+            <div class="form-group-input-container">
+                <input type="text" id="name" name="name" class="form-control" [(ngModel)]="product.name">
+            </div>
+            <label for="participants" class="form-group-label">Description</label>
+            <div class="form-group-input-container">
+                <input type="text" id="description" name="description" class="form-control" [(ngModel)]="product.description">
+            </div>
+            <label for="participants" class="form-group-label">Price</label>
+            <div class="form-group-input-container">
+                <input type="text" id="price" name="price" class="form-control" [(ngModel)]="product.price">
+            </div>
+            <label for="participants" class="form-group-label">Image Url</label>
+            <div class="form-group-input-container">
+                <input type="text" id="imageUrl" name="imageUrl" class="form-control" [(ngModel)]="product.imageUrl">
+            </div>
+        </div>
+        <div class="sub-button">
+            <button type="submit" mat-raised-button style="background-color: #8290e1;">Update</button>
+        </div>
+    </form>
+</div>
